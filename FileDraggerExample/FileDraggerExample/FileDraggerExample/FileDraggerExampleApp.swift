@@ -1,13 +1,13 @@
 //
-//  FileDraggerApp.swift
-//  FileDragger
-//  Created by ZXL on 2025/3/15
+//  FileDraggerExampleApp.swift
+//  FileDraggerExample
+//  Created by ZXL on 2025/3/18
         
 
 import SwiftUI
 
 @main
-struct FileDraggerApp: App {
+struct FileDraggerExampleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

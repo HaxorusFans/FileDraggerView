@@ -8,7 +8,7 @@ Drag some files into FileDraggerView to get their URLs.
 
 ## Compatibility
 
-This component requires macOS 11.0 or later.
+This component requires macOS 10.15 or later.
 
 ## Installation
 
@@ -18,7 +18,7 @@ Add the following to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: https://github.com/HaxorusFan/FileDraggerView.git, from: "1.0.0")
+    .package(url: https://github.com/HaxorusFan/FileDraggerView.git, from: "1.1.0")
 ]
 ```
 

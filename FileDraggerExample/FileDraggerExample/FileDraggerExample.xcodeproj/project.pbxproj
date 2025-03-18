@@ -6,41 +6,46 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		08A923E22D891D2A003A4761 /* FileDraggerView in Frameworks */ = {isa = PBXBuildFile; productRef = 08A923E12D891D2A003A4761 /* FileDraggerView */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		086405A42D8562B900770636 /* FileDragger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileDragger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08A923C42D891B7F003A4761 /* FileDraggerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileDraggerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		086405A62D8562B900770636 /* FileDragger */ = {
+		08A923C62D891B7F003A4761 /* FileDraggerExample */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = FileDragger;
+			path = FileDraggerExample;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		086405A12D8562B900770636 /* Frameworks */ = {
+		08A923C12D891B7F003A4761 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A923E22D891D2A003A4761 /* FileDraggerView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0864059B2D8562B900770636 = {
+		08A923BB2D891B7F003A4761 = {
 			isa = PBXGroup;
 			children = (
-				086405A62D8562B900770636 /* FileDragger */,
-				086405A52D8562B900770636 /* Products */,
+				08A923C62D891B7F003A4761 /* FileDraggerExample */,
+				08A923C52D891B7F003A4761 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		086405A52D8562B900770636 /* Products */ = {
+		08A923C52D891B7F003A4761 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				086405A42D8562B900770636 /* FileDragger.app */,
+				08A923C42D891B7F003A4761 /* FileDraggerExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +53,68 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		086405A32D8562B900770636 /* FileDragger */ = {
+		08A923C32D891B7F003A4761 /* FileDraggerExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 086405B32D8562BB00770636 /* Build configuration list for PBXNativeTarget "FileDragger" */;
+			buildConfigurationList = 08A923D32D891B81003A4761 /* Build configuration list for PBXNativeTarget "FileDraggerExample" */;
 			buildPhases = (
-				086405A02D8562B900770636 /* Sources */,
-				086405A12D8562B900770636 /* Frameworks */,
-				086405A22D8562B900770636 /* Resources */,
+				08A923C02D891B7F003A4761 /* Sources */,
+				08A923C12D891B7F003A4761 /* Frameworks */,
+				08A923C22D891B7F003A4761 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				086405A62D8562B900770636 /* FileDragger */,
+				08A923C62D891B7F003A4761 /* FileDraggerExample */,
 			);
-			name = FileDragger;
+			name = FileDraggerExample;
 			packageProductDependencies = (
+				08A923E12D891D2A003A4761 /* FileDraggerView */,
 			);
-			productName = FileDragger;
-			productReference = 086405A42D8562B900770636 /* FileDragger.app */;
+			productName = FileDraggerExample;
+			productReference = 08A923C42D891B7F003A4761 /* FileDraggerExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0864059C2D8562B900770636 /* Project object */ = {
+		08A923BC2D891B7F003A4761 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
-					086405A32D8562B900770636 = {
+					08A923C32D891B7F003A4761 = {
 						CreatedOnToolsVersion = 16.1;
 					};
 				};
 			};
-			buildConfigurationList = 0864059F2D8562B900770636 /* Build configuration list for PBXProject "FileDragger" */;
+			buildConfigurationList = 08A923BF2D891B7F003A4761 /* Build configuration list for PBXProject "FileDraggerExample" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 0864059B2D8562B900770636;
+			mainGroup = 08A923BB2D891B7F003A4761;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				08A923E02D891D2A003A4761 /* XCLocalSwiftPackageReference "../../../FileDraggerView" */,
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 086405A52D8562B900770636 /* Products */;
+			productRefGroup = 08A923C52D891B7F003A4761 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				086405A32D8562B900770636 /* FileDragger */,
+				08A923C32D891B7F003A4761 /* FileDraggerExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		086405A22D8562B900770636 /* Resources */ = {
+		08A923C22D891B7F003A4761 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +124,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		086405A02D8562B900770636 /* Sources */ = {
+		08A923C02D891B7F003A4761 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +134,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		086405B12D8562BB00770636 /* Debug */ = {
+		08A923D12D891B81003A4761 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -188,7 +197,7 @@
 			};
 			name = Debug;
 		};
-		086405B22D8562BB00770636 /* Release */ = {
+		08A923D22D891B81003A4761 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -243,16 +252,16 @@
 			};
 			name = Release;
 		};
-		086405B42D8562BB00770636 /* Debug */ = {
+		08A923D42D891B81003A4761 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = FileDragger/FileDragger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FileDraggerExample/FileDraggerExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"FileDragger/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"FileDraggerExample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -262,23 +271,23 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = develop.FileDragger;
+				PRODUCT_BUNDLE_IDENTIFIER = develop.FileDraggerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		086405B52D8562BB00770636 /* Release */ = {
+		08A923D52D891B81003A4761 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = FileDragger/FileDragger.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FileDraggerExample/FileDraggerExample.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"FileDragger/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"FileDraggerExample/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -288,7 +297,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = develop.FileDragger;
+				PRODUCT_BUNDLE_IDENTIFIER = develop.FileDraggerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -298,25 +307,39 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0864059F2D8562B900770636 /* Build configuration list for PBXProject "FileDragger" */ = {
+		08A923BF2D891B7F003A4761 /* Build configuration list for PBXProject "FileDraggerExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				086405B12D8562BB00770636 /* Debug */,
-				086405B22D8562BB00770636 /* Release */,
+				08A923D12D891B81003A4761 /* Debug */,
+				08A923D22D891B81003A4761 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		086405B32D8562BB00770636 /* Build configuration list for PBXNativeTarget "FileDragger" */ = {
+		08A923D32D891B81003A4761 /* Build configuration list for PBXNativeTarget "FileDraggerExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				086405B42D8562BB00770636 /* Debug */,
-				086405B52D8562BB00770636 /* Release */,
+				08A923D42D891B81003A4761 /* Debug */,
+				08A923D52D891B81003A4761 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		08A923E02D891D2A003A4761 /* XCLocalSwiftPackageReference "../../../FileDraggerView" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../../FileDraggerView;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08A923E12D891D2A003A4761 /* FileDraggerView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FileDraggerView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 0864059C2D8562B900770636 /* Project object */;
+	rootObject = 08A923BC2D891B7F003A4761 /* Project object */;
 }

@@ -1,10 +1,11 @@
 //
 //  ContentView.swift
-//  FileDragger
-//  Created by ZXL on 2025/3/15
+//  FileDraggerExample
+//  Created by ZXL on 2025/3/18
         
 
 import SwiftUI
+import FileDraggerView
 
 struct ContentView: View {
     @State var paths:[String] = []
@@ -41,3 +42,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
