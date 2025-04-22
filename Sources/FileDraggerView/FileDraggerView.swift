@@ -29,10 +29,8 @@ public class NSFileDraggerView: NSView {
         if isFileTypeAllowed(sender){
             self.wantsLayer = true
             self.layer?.backgroundColor = NSColor.gray.withAlphaComponent(0.5).cgColor
-            return .copy
-        } else {
-            return []
         }
+        return []
     }
     
     public override func draggingExited(_ sender: (any NSDraggingInfo)?) {
@@ -46,7 +44,7 @@ public class NSFileDraggerView: NSView {
     }
     
     public override func performDragOperation(_ sender: any NSDraggingInfo) -> Bool {
-        if let _ = sender.draggingPasteboard.readObjects(forClasses: [NSURL.self], options: [:]) as? [URL] {
+        if goodURLS.count > 0 {
             onFileDragged?(goodURLS)
             return true
         }
@@ -68,11 +66,13 @@ public class NSFileDraggerView: NSView {
             for item in items {
                 if item.hasDirectoryPath && acceptsDirectory{
                     goodURLS.append(item)
-                }else{
+                }else if allowedExtensions.count > 0{
                     let fileExtension = item.pathExtension.lowercased()
                     if allowedExtensions.contains(fileExtension) {
                         goodURLS.append(item)
                     }
+                }else{
+                    goodURLS.append(item)
                 }
             }
             if goodURLS.count > 0 {
