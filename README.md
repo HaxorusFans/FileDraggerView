@@ -18,7 +18,7 @@ Add the following to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: https://github.com/HaxorusFans/FileDraggerView.git, from: "1.1.1")
+    .package(url: https://github.com/HaxorusFans/FileDraggerView.git, from: "1.1.2")
 ]
 ```
 
@@ -48,7 +48,7 @@ Text("Drag \(extensions.joined(separator: "/")) over here")
                 paths.append(url.path)
                 print(url.path)
             }
-        }, allowedExtensions: extensions, acceptsDirectory: true)
+        }, allowedExtensions: extensions, acceptsFile: true, acceptsDirectory: true)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     )
     .animation(nil)

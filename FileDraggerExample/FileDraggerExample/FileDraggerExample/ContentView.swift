@@ -30,7 +30,7 @@ struct ContentView: View {
                             paths.append(url.path)
                             print(url.path)
                         }
-                    }, allowedExtensions: extensions, acceptsDirectory: true)
+                    }, allowedExtensions: extensions, acceptsFile: true, acceptsDirectory: true)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 )
                 .animation(nil)

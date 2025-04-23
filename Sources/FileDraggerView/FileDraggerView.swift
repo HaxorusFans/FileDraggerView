@@ -10,12 +10,12 @@ import Cocoa
 public class NSFileDraggerView: NSView {
     private var allowedExtensions: [String] = []
     private var goodURLS: [URL] = []
+    private var acceptsFile: Bool = true
     private var acceptsDirectory: Bool = false
     var onFileDragged: (([URL]) -> Void)?
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
-        // 注册拖拽类型，告诉视图我们希望它支持哪些类型的拖拽
         registerForDraggedTypes([.fileURL]) // 注册拖拽类型
     }
     
@@ -29,6 +29,7 @@ public class NSFileDraggerView: NSView {
         if isFileTypeAllowed(sender){
             self.wantsLayer = true
             self.layer?.backgroundColor = NSColor.gray.withAlphaComponent(0.5).cgColor
+            return .copy
         }
         return []
     }
@@ -52,32 +53,36 @@ public class NSFileDraggerView: NSView {
     }
     
     public override func draggingUpdated(_ sender: any NSDraggingInfo) -> NSDragOperation {
-        if isFileTypeAllowed(sender) {
+        if isFileTypeAllowed(sender){
+            self.wantsLayer = true
+            self.layer?.backgroundColor = NSColor.gray.withAlphaComponent(0.5).cgColor
             return .copy
-        } else {
-            return []
         }
+        return []
     }
     
     private func isFileTypeAllowed(_ sender: NSDraggingInfo) -> Bool {
-        // 从拖放数据中读取 URL 并检查扩展名
         if let items = sender.draggingPasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL] {
             goodURLS.removeAll()
             for item in items {
-                if item.hasDirectoryPath && acceptsDirectory{
-                    goodURLS.append(item)
-                }else if allowedExtensions.count > 0{
-                    let fileExtension = item.pathExtension.lowercased()
-                    if allowedExtensions.contains(fileExtension) {
+                if item.hasDirectoryPath{
+                    if acceptsDirectory{
                         goodURLS.append(item)
                     }
-                }else{
-                    goodURLS.append(item)
+                }
+                else {
+                    if acceptsFile{
+                        let fileExtension = item.pathExtension.lowercased()
+                        if allowedExtensions.count > 0, allowedExtensions.contains(fileExtension) {
+                            goodURLS.append(item)
+                        }
+                        else if allowedExtensions.count <= 0{
+                            goodURLS.append(item)
+                        }
+                    }
                 }
             }
-            if goodURLS.count > 0 {
-                return true
-            }
+            return goodURLS.count > 0
         }
         return false
     }
@@ -89,6 +94,10 @@ public class NSFileDraggerView: NSView {
     func setAcceptsDirectory(flag: Bool){
         self.acceptsDirectory = flag
     }
+    
+    func setAcceptsFile(flag: Bool){
+        self.acceptsFile = flag
+    }
 }
 
 @available(macOS 10.15, *)
@@ -96,11 +105,13 @@ public struct FileDraggerView: NSViewRepresentable {
     public typealias NSViewType = NSFileDraggerView
     var fileUSage:(([URL]) -> Void)
     let allowedExtensions: [String]
+    let acceptsFile: Bool
     let acceptsDirectory: Bool
     
-    public init(fileUSage: @escaping ([URL]) -> Void, allowedExtensions: [String], acceptsDirectory: Bool = false) {
+    public init(fileUSage: @escaping ([URL]) -> Void, allowedExtensions: [String], acceptsFile: Bool = true, acceptsDirectory: Bool = false) {
         self.fileUSage = fileUSage
         self.allowedExtensions = allowedExtensions
+        self.acceptsFile = acceptsFile
         self.acceptsDirectory = acceptsDirectory
     }
     
@@ -117,6 +128,7 @@ public struct FileDraggerView: NSViewRepresentable {
     public func updateNSView(_ nsView: NSFileDraggerView, context: Context) {
         nsView.setAllowedExtensions(extensions: self.allowedExtensions)
         nsView.setAcceptsDirectory(flag: self.acceptsDirectory)
+        nsView.setAcceptsFile(flag: self.acceptsFile)
     }
     
     public func makeCoordinator() -> Coordinator {
